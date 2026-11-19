@@ -1,0 +1,12 @@
++ lean --version
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
++ lake --version
+Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
++ bwrap --version
+bubblewrap 0.12.0
++ /workspace/scratch/8dddb3cf0936/setup/tools/lean-4.35.0-linux/bin/lake comparator --config /tmp/tmp.eRqOZ1ysWa
+bwrap: Can't create file /root: Read-only file system
+error: Child exited with 1
+Resolving dependencies
++ rm -f /tmp/tmp.eRqOZ1ysWa
+Exit status: 1

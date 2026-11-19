@@ -1,0 +1,28 @@
+$ lean --version
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+$ lake build Density.IntegerLp Density.FejerTail
+Build completed successfully (3523 jobs).
+$ lake env lean --stdin
+module
+
+import Density.IntegerLp
+import Density.FejerTail
+
+#print axioms Density.lpDistance_eq_piLp_dist
+#print axioms Density.strictConvex_piLp_real
+#print axioms Density.collinear_copy_coordinates
+#print axioms Density.Annular.even_obstruction
+#print axioms Density.Annular.odd_obstruction
+#print axioms Density.integerLp_of_hitting
+#print axioms Density.euclidean_of_integerLp
+#print axioms Density.Polynomial.fejer_sum_tail
+
+Output
+'Density.lpDistance_eq_piLp_dist' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Density.strictConvex_piLp_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Density.collinear_copy_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Density.Annular.even_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Density.Annular.odd_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Density.integerLp_of_hitting' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Density.euclidean_of_integerLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Density.Polynomial.fejer_sum_tail' depends on axioms: [propext, Classical.choice, Quot.sound]

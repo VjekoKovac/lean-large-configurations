@@ -1,0 +1,30 @@
++ lean --version
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
++ lake --version
+Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
++ bwrap --version
+bubblewrap 0.12.0
++ /workspace/scratch/8dddb3cf0936/setup/tools/lean-4.35.0-linux/bin/lake comparator --config /tmp/tmp.uYzxq78dAb
+Resolving dependencies
+Building Challenge
+⚠ [2596/2597] Replayed Challenge
+warning: Challenge.lean:95:8: declaration uses `sorry`
+warning: Challenge.lean:98:8: declaration uses `sorry`
+warning: Challenge.lean:101:8: declaration uses `sorry`
+Build completed successfully (2597 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, Density.euclidean, Density.integerLp, Density.nonEuclideanLp, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+✔ [3564/3568] Built Density.Fejer (6.1s)
+Build completed successfully (3568 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, Density.euclidean, Density.integerLp, Density.nonEuclideanLp, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running con-ron kernel on solution
+con-ron: accepted 45629 declarations (--verified)
+con-ron kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!
++ rm -f /tmp/tmp.uYzxq78dAb
+
+Exit status: 0

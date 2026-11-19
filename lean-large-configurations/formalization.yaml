@@ -1,0 +1,133 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Near-optimal density theorems for large dilates of large point configurations"
+  description: >-
+    For the parameters below, each theorem gives a Lebesgue-measurable set
+    E ⊆ ℝᵈ, an n-point set P ⊆ ℝᵈ, and positive scales rⱼ → ∞ such that
+    E contains no isometric copy of rⱼP for any j. In the norm of the
+    theorem, this means that for each j there is no injection f from P into
+    E satisfying ‖f(u) − f(v)‖ = rⱼ ‖u − v‖ for all u, v ∈ P. Density
+    and lower density are the limit and the liminf, respectively, of
+    |E ∩ [−R/2, R/2]ᵈ|/Rᵈ as R → ∞, where |·| is Lebesgue measure.
+
+
+    Theorem 1. There are absolute constants C > 0 and N ∈ ℕ such that for
+    all integers d ≥ 1 and n ≥ N, one can choose such E and P in Euclidean
+    ℝᵈ with P collinear and E of density at least 1 − C log(n)/n.
+
+
+    Theorem 2. For every pair of integers d ≥ 1 and p ≥ 2, there are
+    C > 0 and N ∈ ℕ such that for every integer n ≥ N, one can choose
+    such E and P in (ℝᵈ, ℓᵖ) with P collinear and E of lower density at least
+    1 − C log(n)/n. If p is even, C and N can be chosen to depend only on
+    p, and E can be chosen so that its density exists and satisfies the
+    same bound.
+
+
+    Theorem 3. For every integer d ≥ 1, every real p > 1 with p ≠ 2, and
+    every integer n ≥ 2d + 1, one can choose such E and P in (ℝᵈ, ℓᵖ)
+    so that E has density exactly 1 − 1/(n − 2d + 2). This holds without
+    a collinearity assumption on P.
+  authors:
+    - "Vjekoslav Kovač"
+    - "Adian Anibal Santos Sepčić"
+  responsible_maintainers:
+    - "Vjekoslav Kovač"
+  license: "Apache-2.0"
+
+classification:
+  arxiv: ["math.CA", "math.CO"]
+  msc2020: ["28A75", "05D10", "11K38", "11L15"]
+
+sources:
+  - title: "Near-optimal density theorems for large dilates of large point configurations"
+    type: "paper"
+    authors:
+      - "Vjekoslav Kovač"
+      - "Adian Anibal Santos Sepčić"
+    id: "arXiv:2604.18544v1"
+    location: "https://arxiv.org/abs/2604.18544v1"
+    relationship: "formalizes"
+    note: "Introduction, Theorems 1, 2, and 3. Version 1, 20 April 2026."
+
+status:
+  scope: >-
+    All three introduction theorems have unconditional Lean proofs. The
+    solution uses Mathlib and explicit lemmas for the polynomial and
+    geometric arguments. Section 5's alternative bound and Corollary 4
+    are outside the compared declarations. Lean Comparator checked the two
+    modules and accepted all three proofs with Lean, NanoDa, and con-ron.
+    The source and export runs are recorded in docs/verification.md.
+  # Excludes the three specification-only Challenge theorem bodies.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  main_results:
+    - declaration: "Density.euclidean"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+    - declaration: "Density.integerLp"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+    - declaration: "Density.nonEuclideanLp"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI Codex (GPT-6 family)"]
+      framework: "ChatGPT Work Mode"
+      tool_setup: "Parallel AI agents drafted statements, proof components, and checking infrastructure."
+  notes: >-
+    The authors field follows the requested attribution. AI preparation and
+    review are disclosed separately. No human mathematical sign-off is recorded.
+
+fidelity:
+  divergences: >-
+    The public statements give the three original conclusions. The source
+    proof gives dimension-uniform cutoffs in the even-exponent and Euclidean
+    cases. The polynomial argument proves sufficient Fourier estimates by
+    differencing and passes to interval counts with a finite Fejér kernel.
+    The power-slice estimate uses telescoping bounds from concavity. The
+    arXiv and uploaded versions have the same three introduction theorems.
+review:
+  status: "agent-reviewed"
+  reviewers: ["OpenAI Codex agents (AI)"]
+  notes: >-
+    An independent AI reviewer read all three statements, traced the main
+    deductions, and reviewed clarity without participating in the proof code.
+    Additional AI cross-checks examined the source versions, density slices,
+    and Fourier argument. See docs/fresh-review.md, docs/independent-review.md,
+    docs/proof-audit.md, and the checking transcripts under docs/checks/.
+alignment:
+  namespace: "Density"
+  statements:
+    - source: "Theorem 1"
+      lean: "Density.euclidean"
+      module: "Solution"
+      status: "proved"
+      note: "Euclidean norm and actual density with an absolute constant."
+    - source: "Theorem 2"
+      lean: "Density.integerLp"
+      module: "Solution"
+      status: "proved"
+      note: "All integer exponents at least two, including the even-exponent uniformity clause."
+    - source: "Theorem 3"
+      lean: "Density.nonEuclideanLp"
+      module: "Solution"
+      status: "proved"
+      note: "Real exponent strictly greater than one and distinct from two. The asserted density is exact."
+acknowledgements: >-
+  The Lean and Mathlib projects supply the proof assistant and its mathematical
+  library. Verification setup follows PalomarRegistry/PalomarTemplate. The
+  separation of statements and proof development follows the example of
+  roos-j/lean-dfr.

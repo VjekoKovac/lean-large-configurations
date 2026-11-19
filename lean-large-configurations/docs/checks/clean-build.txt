@@ -1,0 +1,47 @@
++ lean --version
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
++ lake --version
+Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
++ lake build
+✔ [3521/3560] Built Density.Definitions (8.7s)
+✔ [3525/3560] Built Density.Annular (8.0s)
+✔ [3526/3560] Built Density.Collinear (9.9s)
+✔ [3527/3561] Built Density.WeylShift (10s)
+✔ [3538/3572] Built Density.Rigidity (12s)
+✔ [3540/3572] Built Density.PowerSlices (13s)
+✔ [3542/3572] Built Density.Polynomial (14s)
+✔ [3543/3572] Built Density.VanDerCorput (14s)
+✔ [3544/3572] Built Density.Grid (14s)
+⚠ [3545/3572] Built Challenge (5.2s)
+warning: Challenge.lean:95:8: declaration uses `sorry`
+warning: Challenge.lean:98:8: declaration uses `sorry`
+warning: Challenge.lean:101:8: declaration uses `sorry`
+✔ [3547/3572] Built Density.LpSpace (9.6s)
+✔ [3548/3572] Built Density.Cubes (10s)
+✔ [3549/3572] Built Density.Pattern (11s)
+✔ [3550/3572] Built Density.FejerTail (8.8s)
+✔ [3551/3572] Built Density.PhasePolynomial (9.2s)
+✔ [3552/3572] Built Density.PolynomialArcs (8.6s)
+✔ [3553/3572] Built Density.WeylParameters (10s)
+✔ [3554/3572] Built Density.PowerBand (12s)
+✔ [3555/3572] Built Density.Fejer (13s)
+✔ [3556/3572] Built Density.CollinearLp (8.5s)
+✔ [3557/3572] Built Density.SliceDensity (8.5s)
+✔ [3558/3572] Built Density.StripeMeasure (10s)
+✔ [3559/3572] Built Density.Weyl (8.7s)
+✔ [3560/3572] Built Density.AxialCopy (7.2s)
+✔ [3561/3572] Built Density.FejerCount (9.1s)
+✔ [3562/3572] Built Density.AnnularCopies (10s)
+✔ [3563/3572] Built Density.ShellDensity (9.5s)
+✔ [3564/3572] Built Density.WeylSamples (6.2s)
+✔ [3565/3572] Built Density.CrossAvoidance (6.0s)
+✔ [3566/3572] Built Density.FullLp (5.4s)
+✔ [3567/3572] Built Density.IntegerLp (10s)
+✔ [3568/3572] Built Density.Hitting (5.0s)
+✔ [3569/3572] Built Density (2.2s)
+✔ [3571/3572] Built Solution (2.6s)
+Build completed successfully (3572 jobs).
++ lake env lean AxiomReport.lean
+'Density.euclidean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Density.integerLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Density.nonEuclideanLp' depends on axioms: [propext, Classical.choice, Quot.sound]

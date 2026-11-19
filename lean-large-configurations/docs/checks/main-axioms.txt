@@ -1,0 +1,4 @@
+'Density.euclidean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Density.integerLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Density.nonEuclideanLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exit status: 0

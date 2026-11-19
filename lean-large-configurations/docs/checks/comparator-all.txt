@@ -1,0 +1,33 @@
++ lean --version
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
++ lake --version
+Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
++ bwrap --version
+bubblewrap 0.12.0
++ lake build Challenge Solution
+⚠ [2595/2626] Replayed Challenge
+warning: Challenge.lean:95:8: declaration uses `sorry`
+warning: Challenge.lean:98:8: declaration uses `sorry`
+warning: Challenge.lean:101:8: declaration uses `sorry`
+✔ [3566/3570] Built Density.Fejer (8.2s)
+Build completed successfully (3570 jobs).
++ for module in Challenge Solution
++ lake env leanexport Challenge -- Quot Quot.mk Quot.lift Quot.ind Density.euclidean Density.integerLp Density.nonEuclideanLp propext Classical.choice Quot.sound Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam
++ for module in Challenge Solution
++ lake env leanexport Solution -- Quot Quot.mk Quot.lift Quot.ind Density.euclidean Density.integerLp Density.nonEuclideanLp propext Classical.choice Quot.sound Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam
++ sha256sum /workspace/scratch/8dddb3cf0936/work/fejer-fixed-exports/challenge.ndjson /workspace/scratch/8dddb3cf0936/work/fejer-fixed-exports/solution.ndjson
+975db59b113358e09b5bdda7f5ae3a23800027882006f69267445b81e2d7dff6  /workspace/scratch/8dddb3cf0936/work/fejer-fixed-exports/challenge.ndjson
+7dfd52de73ea25bd48f7bb655f576dc08181724c5f509d7cfe86e7a928c536e5  /workspace/scratch/8dddb3cf0936/work/fejer-fixed-exports/solution.ndjson
++ set +x
++ unshare --user --map-current-user --net --fork bwrap --die-with-parent --new-session --unshare-pid --unshare-ipc --unshare-uts --cap-drop ALL --tmpfs / --ro-bind /usr /usr --ro-bind-try /etc/alternatives /etc/alternatives --symlink usr/bin /bin --symlink usr/lib /lib --symlink usr/lib64 /lib64 --proc /proc --dev /dev --tmpfs /tmp --dir /empty --dir /root --dir /run/user --chdir /empty --ro-bind /workspace/scratch/8dddb3cf0936/setup/tools/lean-4.35.0-linux /lean --ro-bind /workspace/scratch/8dddb3cf0936/work/fejer-fixed-exports /exports --clearenv --setenv PATH /lean/bin:/usr/bin --setenv LEAN_NUM_THREADS 2 /lean/bin/lake comparator --inadvisably-no-sandbox --config=/exports/judgment.json --challenge-from-export=/exports/challenge.ndjson --solution-from-export=/exports/solution.ndjson
+WARNING: Sandbox disabled, this run is not trustworthy.
+Running con-ron kernel on solution
+con-ron: accepted 45629 declarations (--verified)
+con-ron kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!
+
+Exit status: 0

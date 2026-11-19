@@ -12,11 +12,9 @@ project:
     and lower density are the limit and the liminf, respectively, of
     |E ∩ [−R/2, R/2]ᵈ|/Rᵈ as R → ∞, where |·| is Lebesgue measure.
 
-
     Theorem 1. There are absolute constants C > 0 and N ∈ ℕ such that for
     all integers d ≥ 1 and n ≥ N, one can choose such E and P in Euclidean
     ℝᵈ with P collinear and E of density at least 1 − C log(n)/n.
-
 
     Theorem 2. For every pair of integers d ≥ 1 and p ≥ 2, there are
     C > 0 and N ∈ ℕ such that for every integer n ≥ N, one can choose
@@ -24,7 +22,6 @@ project:
     1 − C log(n)/n. If p is even, C and N can be chosen to depend only on
     p, and E can be chosen so that its density exists and satisfies the
     same bound.
-
 
     Theorem 3. For every integer d ≥ 1, every real p > 1 with p ≠ 2, and
     every integer n ≥ 2d + 1, one can choose such E and P in (ℝᵈ, ℓᵖ)
@@ -128,6 +125,4 @@ alignment:
       note: "Real exponent strictly greater than one and distinct from two. The asserted density is exact."
 acknowledgements: >-
   The Lean and Mathlib projects supply the proof assistant and its mathematical
-  library. Verification setup follows PalomarRegistry/PalomarTemplate. The
-  separation of statements and proof development follows the example of
-  roos-j/lean-dfr.
+  library.
